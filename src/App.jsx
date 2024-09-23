@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+// import Navbar from "./components/Navbar";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,6 +10,22 @@ function App() {
   return (
     <>
       <div>
+
+      <h1>Social Sentimeter</h1>
+      <Router>
+        
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />}/>
+                <Route path="/blogs" element={<Blogs />} />
+                <Route path="/sign-up"  element={<SignUp />}
+                />
+            </Routes>
+        </Router>
+
+
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
