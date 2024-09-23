@@ -1,17 +1,21 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import * as collection from './collection/main';
+
+
+
 import { createTheme } from '@mui/material/styles';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import BarChartIcon from '@mui/icons-material/BarChart';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import type { Router, Navigation } from '@toolpad/core';
+/*import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import BarChartIcon from '@mui/icons-material/BarChart';
 import AddIcon from '@mui/icons-material/Add';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import TimelineIcon from '@mui/icons-material/Timeline';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';*/
 
 
 const NAVIGATION: Navigation = [
@@ -22,7 +26,7 @@ const NAVIGATION: Navigation = [
   {
     segment: 'dashboard',
     title: 'Dashboard',
-    icon: <DashboardIcon />,
+    // icon: <DashboardIcon />,
   },
   {
     kind: 'divider',
@@ -34,17 +38,17 @@ const NAVIGATION: Navigation = [
   {
     segment: 'reports',
     title: 'Reports',
-    icon: <BarChartIcon />,
+    // icon: <collection.BarChartIcon />,
     children: [
       {
         segment: 'emotionReport',
         title: 'Emotions Summary',
-        icon: <EmojiEmotionsIcon />,
+        // icon: <collection.EmojiEmotionsIcon />,
       },
       {
         segment: 'trends',
         title: 'Sentiment Trends',
-        icon: <TimelineIcon />,
+        // icon: <collection.TimelineIcon />,
       },
     ],
   },
@@ -58,12 +62,12 @@ const NAVIGATION: Navigation = [
   {
     segment: 'addFeedback',
     title: 'Add New',
-    icon: <AddIcon />,
+    // icon: <collection.AddIcon />,
   },
   {
     segment: 'searchFeedback',
     title: 'Search',
-    icon: <ViewListIcon />,
+    // icon: <collection.ViewListIcon />,
   },
 ];
 
@@ -85,7 +89,7 @@ const demoTheme = createTheme({
 
 function DemoPageContent({ pathname }: { pathname: string }) {
   return (
-    <Box
+    <collection.Box
       sx={{
         py: 4,
         display: 'flex',
@@ -94,8 +98,8 @@ function DemoPageContent({ pathname }: { pathname: string }) {
         textAlign: 'center',
       }}
     >
-      <Typography>Dashboard content for {pathname}</Typography>
-    </Box>
+      <collection.Typography>Dashboard content for {pathname}</collection.Typography>
+    </collection.Box>
   );
 }
 
@@ -131,7 +135,7 @@ export default function DashboardLayoutBasic(props: DemoProps) {
       theme={demoTheme}
       window={demoWindow}
       branding={{
-        logo: <AutoAwesomeIcon/>,
+        // logo: <collection.AutoAwesomeIcon/>,
         title: 'Social SentiMeter',
       }}
     >
