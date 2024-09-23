@@ -1,21 +1,17 @@
 import * as React from 'react';
-import * as collection from './collection/main';
-
-
-
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material/styles';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import BarChartIcon from '@mui/icons-material/BarChart';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import type { Router, Navigation } from '@toolpad/core';
-/*import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import BarChartIcon from '@mui/icons-material/BarChart';
 import AddIcon from '@mui/icons-material/Add';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import TimelineIcon from '@mui/icons-material/Timeline';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';*/
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 
 const NAVIGATION: Navigation = [
@@ -26,7 +22,7 @@ const NAVIGATION: Navigation = [
   {
     segment: 'dashboard',
     title: 'Dashboard',
-    // icon: <DashboardIcon />,
+    icon: <DashboardIcon />,
   },
   {
     kind: 'divider',
@@ -38,17 +34,17 @@ const NAVIGATION: Navigation = [
   {
     segment: 'reports',
     title: 'Reports',
-    // icon: <collection.BarChartIcon />,
+    icon: <BarChartIcon />,
     children: [
       {
         segment: 'emotionReport',
         title: 'Emotions Summary',
-        // icon: <collection.EmojiEmotionsIcon />,
+        icon: <EmojiEmotionsIcon />,
       },
       {
         segment: 'trends',
         title: 'Sentiment Trends',
-        // icon: <collection.TimelineIcon />,
+        icon: <TimelineIcon />,
       },
     ],
   },
@@ -62,12 +58,12 @@ const NAVIGATION: Navigation = [
   {
     segment: 'addFeedback',
     title: 'Add New',
-    // icon: <collection.AddIcon />,
+    icon: <AddIcon />,
   },
   {
     segment: 'searchFeedback',
     title: 'Search',
-    // icon: <collection.ViewListIcon />,
+    icon: <ViewListIcon />,
   },
 ];
 
@@ -89,7 +85,7 @@ const demoTheme = createTheme({
 
 function DemoPageContent({ pathname }: { pathname: string }) {
   return (
-    <collection.Box
+    <Box
       sx={{
         py: 4,
         display: 'flex',
@@ -98,8 +94,8 @@ function DemoPageContent({ pathname }: { pathname: string }) {
         textAlign: 'center',
       }}
     >
-      <collection.Typography>Dashboard content for {pathname}</collection.Typography>
-    </collection.Box>
+      <Typography>Dashboard content for {pathname}</Typography>
+    </Box>
   );
 }
 
@@ -135,7 +131,7 @@ export default function DashboardLayoutBasic(props: DemoProps) {
       theme={demoTheme}
       window={demoWindow}
       branding={{
-        // logo: <collection.AutoAwesomeIcon/>,
+        logo: <AutoAwesomeIcon/>,
         title: 'Social SentiMeter',
       }}
     >
