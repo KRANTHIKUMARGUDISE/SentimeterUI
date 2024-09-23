@@ -23,3 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 /.vs/slnx.sqlite
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
+/.vs/VSWorkspaceState.json
+/.vs/SentimeterUI/FileContentIndex/c1acee27-a906-4a0a-a740-97f4d953f68c.vsidx
+/.vs/SentimeterUI/FileContentIndex/0e8576f0-bf2e-4e6d-8ea4-245acaa1015f.vsidx
+/.vs/SentimeterUI/v17
+/.vs/SentimeterUI/FileContentIndex
